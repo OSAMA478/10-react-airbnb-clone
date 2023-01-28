@@ -14,7 +14,12 @@ const Header = () => {
 		<header className="sticky top-0 z-50 grid grid-cols-3 p-5 bg-white shadow-md md:px-10">
 			{/* left side */}
 			<div className="relative flex items-center h-10 my-auto cursor-pointer">
-				<Image className="object-contain object-left" src={brandLogo} fill />
+				<Image
+					className="object-contain object-left"
+					src={brandLogo}
+					alt="brand logo"
+					fill
+				/>
 			</div>
 			{/* middle side */}
 			<div className="flex items-center py-2 rounded-full md:border-2 md:shadow-sm">
