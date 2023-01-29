@@ -90,6 +90,17 @@ const Header = () => {
 							className="w-12 pl-2 text-lg outline-none"
 						/>
 					</div>
+					<div className="flex gap-8">
+						<button
+							onClick={() => setSearchInput("")}
+							className="flex-grow py-2 text-white bg-gray-300 rounded-lg"
+						>
+							Cancel
+						</button>
+						<button className="flex-grow py-2 rounded-lg text-white bg-[#F87171]">
+							search
+						</button>
+					</div>
 				</div>
 			)}
 		</header>
