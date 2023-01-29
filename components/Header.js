@@ -62,7 +62,7 @@ const Header = () => {
 			</div>
 			{/* right side */}
 			<div className="flex items-center justify-end space-x-4 ">
-				<p className="hidden md:inline">become a host</p>
+				<p className="hidden capitalize md:inline">become a host</p>
 				<BsGlobe className="h-4" />
 				<div className="flex items-center p-2 space-x-2 border-2 rounded-full">
 					<AiOutlineMenu className="h-4" />
