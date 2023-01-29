@@ -86,6 +86,7 @@ const Header = () => {
 						<input
 							value={numberOfPeople}
 							type="number"
+							min={1}
 							onChange={iconHandler}
 							className="w-12 pl-2 text-lg outline-none"
 						/>
