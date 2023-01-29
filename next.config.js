@@ -16,6 +16,13 @@ module.exports = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "links.papareact.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };
+// links.papareact.com

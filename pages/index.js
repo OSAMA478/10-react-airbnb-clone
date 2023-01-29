@@ -4,10 +4,11 @@ import { Inter } from "@next/font/google";
 // import styles from "@/styles/Home.module.css";
 import Header from "@/components/Header";
 import Banner from "@/components/Banner";
+import SmallCard from "@/components/SmallCard";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home(props) {
   return (
     <>
       <Head>
@@ -18,6 +19,76 @@ export default function Home() {
       </Head>
       <Header />
       <Banner />
+
+      <main>
+        <section>
+          <h2 className="text-4xl font-semibold pd-5">Explore Nearby</h2>
+
+          {props.exploreData?.map((item) => (
+            <SmallCard
+              key={item.img}
+              img={item.img}
+              location={item.location}
+              distance={item.distance}
+            />
+          ))}
+        </section>
+      </main>
     </>
   );
+}
+// https://jsonkeeper.com/b/4G1G
+
+export async function getStaticProps() {
+  //for papa api link
+  // const response = await fetch("https://jsonkeeper.com/b/4G1G");
+  // const exploreData = await response.json();
+
+  const exploreData = [
+    {
+      img: "https://links.papareact.com/5j2",
+      location: "London",
+      distance: "45-minute drive",
+    },
+    {
+      img: "https://links.papareact.com/1to",
+      location: "Manchester",
+      distance: "4.5-hour drive",
+    },
+    {
+      img: "https://links.papareact.com/40m",
+      location: "Liverpool",
+      distance: "4.5-hour drive",
+    },
+    {
+      img: "https://links.papareact.com/msp",
+      location: "York",
+      distance: "4-hour drive",
+    },
+    {
+      img: "https://links.papareact.com/2k3",
+      location: "Cardiff",
+      distance: "45-minute drive",
+    },
+    {
+      img: "https://links.papareact.com/ynx",
+      location: "Birkenhead",
+      distance: "4.5-hour drive",
+    },
+    {
+      img: "https://links.papareact.com/kji",
+      location: "Newquay",
+      distance: "6-hour drive",
+    },
+    {
+      img: "https://links.papareact.com/41m",
+      location: "Hove",
+      distance: "2-hour drive",
+    },
+  ];
+  return {
+    props: {
+      exploreData,
+    },
+  };
 }
