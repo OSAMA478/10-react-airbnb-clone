@@ -22,7 +22,6 @@ export default function Home(props) {
 			</Head>
 			<Header />
 			<Banner />
-
 			<main className="px-8 mx-auto max-w-7xl sm:px-16">
 				<section className="pt-6">
 					<h2 className="text-4xl font-semibold pd-5">Explore Nearby</h2>
