@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InfoCard from "@/components/InfoCard";
 import { format } from "date-fns";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 
 const search = ({ fetchedData }) => {
@@ -16,6 +17,11 @@ const search = ({ fetchedData }) => {
 	const endDateFormat = format(new Date(endDate), "dd MMM yyyy");
 
 	const range = `${startDateFormat} - ${endDateFormat}`;
+
+	const Map = dynamic(
+		() => import("/components/map"), // replace '@components/map' with your component's location
+		{ ssr: false } // This line is important. It's what prevents server-side render
+	);
 
 	return (
 		<div>
@@ -50,6 +56,12 @@ const search = ({ fetchedData }) => {
 								/>
 							)
 						)}
+					</div>
+				</section>
+
+				<section className="hidden lg:grid grid-rows-[repeat(10,1fr)]  min-w-[600px] z-20  ">
+					<div className="row-start-2 row-end-[9] ">
+						<Map />
 					</div>
 				</section>
 			</main>
