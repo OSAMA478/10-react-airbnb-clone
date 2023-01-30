@@ -12,15 +12,18 @@ import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const brandLogo =
 	"https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png";
 
-const Header = () => {
+const Header = ({ placeholder }) => {
 	const [searchInput, setSearchInput] = useState("");
 	const [numberOfPeople, setNumberOfPeople] = useState(1);
 	const [startDate, setStartDate] = useState(new Date());
 	const [endDate, setEndDate] = useState(new Date());
+
+	const router = useRouter();
 
 	const handleSelect = (ranges) => {
 		setStartDate(ranges.selection.startDate);
@@ -33,8 +36,24 @@ const Header = () => {
 		key: "selection",
 	};
 
+	console.log(selectionRange.startDate);
+	console.log(selectionRange.endDate);
+
 	const iconHandler = (event) => {
 		setNumberOfPeople(event.target.value);
+	};
+
+	const searchHandler = () => {
+		router.push({
+			pathname: "/search",
+			query: {
+				noOfGuest: numberOfPeople,
+				location: searchInput,
+				startDate: startDate.toISOString(),
+				endDate: endDate.toISOString(),
+			},
+		});
+		setSearchInput("");
 	};
 
 	return (
@@ -59,7 +78,7 @@ const Header = () => {
 					}}
 					className="flex-grow w-full pl-5 text-sm text-gray-600 placeholder-gray-400 bg-transparent outline-none"
 					type="text"
-					placeholder="type your text"
+					placeholder={placeholder || "type your text"}
 				/>
 				<GoSearch className="hidden w-8 h-8 p-2 text-white bg-red-400 rounded-full cursor-pointer md:inline-flex md:mx-2" />
 			</div>
@@ -101,7 +120,10 @@ const Header = () => {
 						>
 							Cancel
 						</button>
-						<button className="flex-grow py-2 rounded-lg text-white bg-[#F87171]">
+						<button
+							onClick={searchHandler}
+							className="flex-grow py-2 rounded-lg text-white bg-[#F87171]"
+						>
 							search
 						</button>
 					</div>
