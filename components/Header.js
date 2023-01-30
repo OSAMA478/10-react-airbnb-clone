@@ -11,6 +11,7 @@ import { DateRangePicker } from "react-date-range";
 
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
+import Link from "next/link";
 
 const brandLogo =
 	"https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2560px-Airbnb_Logo_B%C3%A9lo.svg.png";
@@ -39,14 +40,16 @@ const Header = () => {
 	return (
 		<header className="sticky top-0 z-50 grid grid-cols-3 p-5 bg-white shadow-md md:px-10">
 			{/* left side */}
-			<div className="relative flex items-center h-10 my-auto cursor-pointer">
-				<Image
-					className="object-contain object-left"
-					src={brandLogo}
-					alt="brand logo"
-					fill
-				/>
-			</div>
+			<Link href="/">
+				<div className="relative flex items-center h-10 my-auto cursor-pointer">
+					<Image
+						className="object-contain object-left"
+						src={brandLogo}
+						alt="brand logo"
+						fill
+					/>
+				</div>
+			</Link>
 			{/* middle side */}
 			<div className="flex items-center py-2 rounded-full md:border-2 md:shadow-sm">
 				<input
