@@ -53,7 +53,7 @@ export default function Home(props) {
 					buttonText="Get Inspired"
 				/>
 			</main>
-			<Footer footerData={props.footerData} />
+			<Footer />
 		</>
 	);
 }
@@ -111,45 +111,11 @@ export async function getStaticProps() {
 		{ img: "https://links.papareact.com/s03", title: "Entire homes" },
 		{ img: "https://links.papareact.com/8ix", title: "Pet allowed" },
 	];
-	const footerData = [
-		{
-			heading: "ABOUT",
-			subTopic1: "How Airbnb works",
-			subTopic2: "Newsroom",
-			subTopic3: "Investors",
-			subTopic4: "Airbnb Plus",
-			subTopic5: "Airbnb Luxe",
-		},
-		{
-			heading: "COMMUNITY",
-			subTopic1: "Accessibility",
-			subTopic2: "This is not a real site",
-			subTopic3: "Its pretty awesome clone",
-			subTopic4: "Referrals accepted",
-			subTopic5: "papafam",
-		},
-		{
-			heading: "HOST",
-			subTopic1: "Papa React",
-			subTopic2: "Presents",
-			subTopic3: "Zero to Full Stack Hero",
-			subTopic4: "Hundreds of students",
-			subTopic5: "Join Now",
-		},
-		{
-			heading: "SUPPORT",
-			subTopic1: "Help Center",
-			subTopic2: "Ttrust & Safety",
-			subTopic3: "Say Hi YouTube",
-			subTopic4: "Easter Eggs",
-			subTopic5: "For the Win",
-		},
-	];
+
 	return {
 		props: {
 			exploreData,
 			cardsData,
-			footerData,
 		},
 	};
 }
