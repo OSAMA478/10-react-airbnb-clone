@@ -26,7 +26,7 @@ const search = ({ fetchedData }) => {
 	return (
 		<div>
 			<Header placeholder={`${location} | ${range} | ${noOfGuest} guests `} />
-			<main className="flex">
+			<main className="flex pb-6">
 				<section className="flex-grow px-6 pt-14">
 					<p className="text-xs">
 						Stay {range} for {noOfGuest} number of guest
