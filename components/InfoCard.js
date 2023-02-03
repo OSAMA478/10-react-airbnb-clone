@@ -20,23 +20,22 @@ const InfoCard = ({
 				<Image src={img} fill className="object-cover rounded-lg" />
 			</div>
 			<div className="flex flex-col flex-grow pl-5">
-				<div className="flex justify-between">
+				<div className="flex items-center justify-between">
 					<p>{location}</p>
 
 					<AiFillHeart
 						onClick={() => setIsLiked(!isliked)}
 						className={`cursor-pointer ${
 							isliked ? `text-red-600` : `text-gray-500`
-						} h-7`}
+						} h-7 w-7`}
 					/>
 				</div>
 				<h4 className="text-xl">{title}</h4>
 				<div className=""></div>
 				<p className="flex-grow p-2 text-sm text-gray-500">{description}</p>
 				<div className="flex items-end justify-between pt-4">
-					<p className="flex items-center ">
+					<p className="flex items-center gap-2 ">
 						<AiFillStar className={`text-red-400 h-5`} />
-
 						{star}
 					</p>
 					<div className="">

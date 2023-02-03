@@ -60,7 +60,7 @@ const search = ({ fetchedData }) => {
 				</section>
 
 				<section className="hidden lg:grid grid-rows-[repeat(10,1fr)]  min-w-[600px] z-20 pr-6  ">
-					<div className="row-start-2  row-end-[9] ">
+					<div className="row-start-2 rounded-lg overflow-hidden row-end-[9] ">
 						<Map data={fetchedData} />
 					</div>
 				</section>
