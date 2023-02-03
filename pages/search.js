@@ -19,7 +19,7 @@ const search = ({ fetchedData }) => {
 	const range = `${startDateFormat} - ${endDateFormat}`;
 
 	const Map = dynamic(
-		() => import("/components/map"), // replace '@components/map' with your component's location
+		() => import("../components/Map"), // replace '@components/map' with your component's location
 		{ ssr: false } // This line is important. It's what prevents server-side render
 	);
 
