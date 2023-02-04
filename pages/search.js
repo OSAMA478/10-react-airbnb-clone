@@ -32,7 +32,8 @@ const search = ({ fetchedData }) => {
 						Stay {range} for {noOfGuest} number of guest
 					</p>
 					<h1 className="mt-2 mb-6 text-3xl font-semibold">
-						Stay in {location}
+						Stay in{" "}
+						{location[0].toUpperCase() + location.slice(1).toLowerCase()}
 					</h1>
 					<div className="hidden mb-5 space-x-3 text-gray-800 lg:inline-flex whitespace-nowrap">
 						<p className="button">Cancellation Flexibility</p>
@@ -59,8 +60,8 @@ const search = ({ fetchedData }) => {
 					</div>
 				</section>
 
-				<section className="hidden lg:grid grid-rows-[repeat(10,1fr)]  min-w-[600px] z-20 pr-6  ">
-					<div className="row-start-2 rounded-lg overflow-hidden row-end-[9] ">
+				<section className="hidden relative lg:grid  min-w-[600px] z-20 pr-6  ">
+					<div className="sticky right-0 w-full h-screen overflow-hidden rounded-lg ">
 						<Map data={fetchedData} />
 					</div>
 				</section>
